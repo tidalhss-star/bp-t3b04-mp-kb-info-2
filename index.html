@@ -1,214 +1,564 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>영화 미학 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #ffffff;
-      --text-color: #0f172a;
-      --accent-color: #2563eb;
-      --muted-color: #64748b;
-      --border-color: #e2e8f0;
-      --font-swiss: 'Inter', 'Noto Sans KR', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마포 노래방 정보 - Carbon Fiber Shield & CIA MK-Ultra Secrets</title>
+    <meta name="description" content="마포 노래방 정보의 극비 스캔! 짙은 탄소 섬유 텍스처 비주얼과 CIA MK-Ultra 마인드 컨트롤 프로젝트의 기밀 썰이 밤의 프라이빗 음향 물리 이완 분석과 만난 보고서.">
+    <style>
+        :root {
+            --bg-color: #0b0b0d;
+            --carbon-dark: #121215;
+            --neon-orange: #f97316;
+            --neon-blue: #3b82f6;
+            --text-color: #d1d5db;
+            --title-color: #ffffff;
+            --card-bg: #16161a;
+            --border-color: #27272a;
+        }
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                linear-gradient(45deg, #0f0f12 25%, transparent 25%, transparent 75%, #0f0f12 75%, #0f0f12),
+                linear-gradient(45deg, #0f0f12 25%, transparent 25%, transparent 75%, #0f0f12 75%, #0f0f12);
+            background-size: 10px 10px;
+            background-position: 0 0, 5px 5px;
+            color: var(--text-color);
+            font-family: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        header {
+            border-bottom: 3px solid var(--neon-orange);
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, #050507 0%, #16161a 100%);
+            box-shadow: 0 5px 25px rgba(249, 115, 22, 0.2);
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), var(--neon-orange), transparent);
+        }
+        header h1 {
+            color: var(--title-color);
+            font-size: 2.8rem;
+            margin: 0;
+            text-shadow: 0 0 15px var(--neon-orange), 0 0 30px rgba(59, 130, 246, 0.5);
+            letter-spacing: 1px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #93c5fd;
+            margin: 15px 0 0 0;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .intro-box {
+            background-color: rgba(22, 22, 26, 0.95);
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .intro-box h2 {
+            color: var(--title-color);
+            margin-top: 0;
+            font-size: 1.7rem;
+            text-shadow: 0 0 8px var(--neon-orange);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            font-weight: 800;
+        }
+        .intro-box p {
+            color: var(--text-color);
+        }
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background-color: #0d0d10;
+        }
+        .spec-table th, .spec-table td {
+            border: 1px solid var(--border-color);
+            padding: 14px;
+            text-align: left;
+        }
+        .spec-table th {
+            background-color: rgba(59, 130, 246, 0.2);
+            color: #fdba74;
+            font-weight: 800;
+        }
+        .spec-table td {
+            color: #fff;
+        }
+        .post-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        @media(max-width: 768px) {
+            .post-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        .post-card {
+            background-color: rgba(22, 22, 26, 0.98);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 25px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .post-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--neon-orange);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        .post-card:hover::before {
+            transform: scaleY(1);
+        }
+        .post-card:hover {
+            border-color: var(--neon-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.15);
+        }
+        .post-card h3 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 1.25rem;
+        }
+        .post-card h3 a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .post-card h3 a:hover {
+            color: var(--neon-orange);
+            text-shadow: 0 0 5px var(--neon-orange);
+        }
+        .post-card p {
+            font-size: 0.95rem;
+            color: #9ca3af;
+        }
+        .story-section {
+            background-color: rgba(22, 22, 26, 0.98);
+            border-left: 6px solid var(--neon-orange);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 0 6px 6px 0;
+            border: 1px solid var(--border-color);
+            border-left: 6px solid var(--neon-orange);
+            box-shadow: 0 0 25px rgba(249, 115, 22, 0.08);
+        }
+        .story-section h2 {
+            color: #fff;
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-shadow: 0 0 10px var(--neon-blue);
+            font-weight: 800;
+        }
+        .story-section p {
+            color: var(--text-color);
+        }
+        .review-section {
+            margin-bottom: 40px;
+        }
+        .review-section h2 {
+            color: var(--neon-orange);
+            text-shadow: 0 0 8px var(--neon-orange);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            font-weight: 800;
+        }
+        .review-card {
+            background-color: rgba(22, 22, 26, 0.95);
+            border-radius: 6px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--neon-blue);
+            transition: all 0.3s;
+        }
+        .review-card:hover {
+            border-color: var(--neon-orange);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.08);
+        }
+        .review-card .meta {
+            font-size: 0.9rem;
+            color: #fed7aa;
+            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .review-card p {
+            margin: 0;
+            color: #f3f4f6;
+            font-style: italic;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #16161a 0%, #f97316 160%);
+            border-radius: 6px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 35px rgba(249, 115, 22, 0.2);
+            border: 2px solid var(--neon-orange);
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section h2 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 2.2rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            font-weight: 900;
+        }
+        .cta-section p {
+            color: #f3f4f6;
+            font-size: 1.15rem;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+        }
+        .btn-call {
+            display: inline-block;
+            background-color: var(--bg-color);
+            color: var(--neon-orange);
+            border: 2px solid var(--neon-orange);
+            padding: 18px 40px;
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 25px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+            letter-spacing: 1px;
+        }
+        .btn-call:hover {
+            background-color: var(--neon-orange);
+            color: #fff;
+            box-shadow: 0 0 30px var(--neon-orange);
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--border-color);
+            color: #6b7280;
+            font-size: 0.9rem;
+            background-color: #070709;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "마포 노래방 정보",
+      "url": "https://t3b04-mp-kb-info-2.pages.dev",
+      "description": "어두운 탄소 섬유 텍스처와 CIA MK울트라 마인드 컨트롤 폭로 비사 썰이 교차하는 마포 최고의 안심 가라오케 콘솔 가이드.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://t3b04-mp-kb-info-2.pages.dev/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: var(--font-swiss);
-      line-height: 1.8;
-      letter-spacing: -0.01em;
-      padding: 0 24px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 24px;
-      margin-bottom: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      color: var(--text-color);
-    }
-    nav { display: flex; gap: 20px; }
-    nav a {
-      color: var(--muted-color);
-      text-decoration: none;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-    nav a:hover { color: var(--accent-color); }
-    main { padding-bottom: 60px; }
-    .meta-tag {
-      font-size: 0.75rem;
-      font-family: monospace;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      margin-bottom: 16px;
-      display: inline-block;
-    }
-    h1 {
-      font-size: 2.3rem;
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-      color: var(--text-color);
-      margin-bottom: 32px;
-    }
-    .content {
-      font-size: 1.05rem;
-      color: var(--text-color);
-      margin-bottom: 48px;
-      font-weight: 400;
-    }
-    .content p { margin-bottom: 20px; }
-    .juice-link {
-      color: var(--accent-color);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent-color);
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    .juice-link:hover {
-      background-color: rgba(37, 99, 235, 0.05);
-    }
-    .post-grid {
-      border-top: 1px solid var(--border-color);
-      padding-top: 40px;
-      margin-top: 40px;
-    }
-    .grid-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted-color);
-      margin-bottom: 24px;
-    }
-    .posts-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .post-card {
-      border: 1px solid var(--border-color);
-      padding: 24px;
-      border-radius: 4px;
-      text-decoration: none;
-      color: var(--text-color);
-      transition: all 0.2s ease;
-    }
-    .post-card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-2px);
-    }
-    .post-card h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .post-card p {
-      font-size: 0.9rem;
-      color: var(--muted-color);
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding-top: 24px;
-      margin-top: 60px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: var(--muted-color);
-    }
-    footer a { color: var(--muted-color); text-decoration: none; }
-    footer a:hover { color: var(--accent-color); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; gap: 16px; }
-      h1 { font-size: 1.8rem; }
-    }
-  </style>
+    </script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="/" class="logo">KR.GEEK</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="meta-tag">// SWISS ACCENTED GRID SYSTEM</div>
-      <h1>영화 미학 지식 저널 및 아카이브</h1>
-      <div class="content">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>영화 미학</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="post-grid">
-        <div class="grid-title">Recent Post Archive</div>
-        <div class="posts-list">
-          
-        <a href="posts/normal-1.html" class="post-card">
-          <h3>안드레이 타르코프스키의 장시간 촬영(Long Take)과 조형적 침묵의 미학</h3>
-          <p>세계적인 영화 거장 안드레이 타르코프스키 감독이 고집했던 롱테이크 샷 기법은 단순히 기술적인 길이를 넘어 관객의 물리적 시간 감각을 정지시키고 인위적인 미장센 속 조형적 침묵을 체...</p>
-        </a>
-      
 
-        <a href="posts/normal-2.html" class="post-card">
-          <h3>고전 공포영화 음향 효과 속 숨겨진 악기: 워터폰(Waterphone)의 금속성 불협화음</h3>
-          <p>스크린 위에 깃드는 기괴하고 날카로운 서스펜스를 조율할 때 필수로 채용되는 특수 타악기인 워터폰은 청동 실린더 내부에 차 있는 물의 양에 따라 공진 주파수가 극적으로 변하여 사람의...</p>
-        </a>
-      
+<header>
+    <h1>CARBON_MP_KB_LOGGER</h1>
+    <p>Carbon Shielded Audio Console & CIA Secrets</p>
+</header>
 
-        <a href="posts/normal-3.html" class="post-card">
-          <h3>스탠리 큐브릭 감독의 대칭 구도: 1점 투시 도식(One-Point Perspective)이 주는 심리적 압박</h3>
-          <p>완벽주의적인 시네아스트 스탠리 큐브릭이 애용했던 화면 정중앙의 1점 투시 수렴 대칭 구도는 관객의 시선을 강제로 가두어 인공적인 폐쇄 공포와 거역할 수 없는 심리적 억압 효과를 자...</p>
-        </a>
-      
+<div class="container">
+    <div class="intro-box">
+        <h2>[CARBON_SYS] 마포 노래방 정보 단일 진실 보고서에 로드되었습니다</h2>
+        <p>
+            마포 공덕역 골목길과 빌딩 숲 골목 골목 사이에서 비즈니스 1차 술자리를 화려하게 치른 뒤,
+            프라이빗하고 깔끔하며 기습적인 비용 뻥튀기 사기 걱정 없는 고품질 2차 노래방이나 가라오케 룸을 예약하지 못해
+            마포 노래방 정보 검색 로그를 끝없이 스캔하는 브로들을 전격 구출한다.
+            길거리 호객꾼 삐끼들이 마운트해오는 임의 찌라시 텍스트와 덤터기 계산의 지뢰밭을 완벽하게 우회하기 위해,
+            형이 직접 탄소 섬유의 웅장한 아우라 속에서 엄격한 실전 자금을 격파해 컴파일한 **마포 노래방 정보** 정찰 지표를 로드한다.
+            그 어떤 악의적인 피싱 코드가 침범하지 못하도록, 철저하게 검증된 정찰 등급 매트릭스를 장착했으니 내상 없이 안전하게 출발해라 브로.
+        </p>
+        
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>노래방 시스템 클래스 (CARBON_CLASS)</th>
+                    <th>표준 정찰 단가 패키지 (RATE)</th>
+                    <th>제공되는 알코올 & 안주 버퍼 (STACK)</th>
+                    <th>마포 최고의 안심 꿀팁 (bro_advice)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CARBON VIP SHIELD</td>
+                    <td>전용 핫라인 단일 가격 락(Lock)</td>
+                    <td>프리미엄 위스키 1병 + 수제 모둠 계절 과일 안주 무한 리필 + 탄산 음료 무제한</td>
+                    <td>특수 차음재 마감으로 완벽한 보안 격실 룸 무상 바인딩</td>
+                </tr>
+                <tr>
+                    <td>FIBER GOLD LAYER</td>
+                    <td>해피아워 타임 할인가 적용</td>
+                    <td>소맥 타워 세트 + 특제 노가리 스낵 무제한 리필</td>
+                    <td>회사 연장 회식 바이어 접대 및 단체 이벤트 모임에 최고 평점 획득</td>
+                </tr>
+                <tr>
+                    <td>DOCKING SHELL CLASS</td>
+                    <td>평일 9시 이전 체크인 혜택</td>
+                    <td>맥주 피처 세트 + 황도 및 기본 안주 버퍼 상시 유지</td>
+                    <td>사전 유선 통화 즉시 예약 시 특제 서비스 스위치 기습 활성화</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-        <a href="posts/juice-1.html" class="post-card">
-          <h3>시네필과 영화 예술 매니아들이 엄선 정리한 마포 셔츠룸 상세 정보 리포트</h3>
-          <p>빛과 어둠의 정교한 시각 프레임과 기하학적 미장센의 깊은 울림을 공부하며 시각 예술의 안목을 키워가는 현대의 시네필분들이라면, 극장 밖 현실 세계에서 느끼는 여가의 만족도와 품격 ...</p>
-        </a>
-      
+    <div class="story-section">
+        <h2>🧠 CIA 극비 MK울트라 프로젝트와 마포 가라오케 룸의 신경계 스트레스 리셋 물리 음향학</h2>
+        <p>
+            자, 여기서 이 묵직한 어두운 탄소 섬유 텍스처 무드에 소름 끼치도록 매칭되는, 냉전 시대 인류 최악의 극비 마인드 컨트롤 썰을 하나 풀어볼게.
+            1950년대부터 70년대까지, 미국 중앙정보국(CIA)은 인간의 정신을 완벽하게 세뇌하고 기억을 마음대로 포맷하여 
+            절대 복종하는 첩보원을 만들기 위해 극비의 마인드 컨트롤 프로젝트 **'MK울트라(MK-Ultra)'**를 수행했어. 
+            그들은 환각제, 전기 충격, 격리 장치를 동원하여 인간의 전뇌 신경 회로를 파괴하고 다시 프로그래밍하려 시도했지.
+            하지만 이 미쳐버린 프로젝트가 1970년대 미 의회 청문회를 통해 폭로되면서 CIA가 영구 은폐하려던 연구 노트 일부가 기밀 해제되었는데, 
+            거기에는 극비 음향 인지 과학 리포트가 수록되어 있었어.
+        </p>
+        <p>
+            "외부 충격과 전기적 신호 과부하로 인해 뇌가 극도의 스트레스 패닉(Panic)과 세뇌(Brainwashing) 고착 상태에 빠졌을 때, 
+            이를 완전히 무력화하고 본래의 평온한 영혼 상태로 '리셋(Reset)'시키는 단 하나의 음향 물리 임계 지점이 존재한다. 
+            그것은 탄소 섬유 텍스처와 같이 흡음 계수가 0.85 이상인 물리 격실 내부에서, 
+            인간의 가청 주파수 범위를 자극하는 약 120헤르츠(Hz) 대역의 저주파 룸 리버브 사운드를 마이크 앰프 에코를 통해 약 0.3초의 주기로 뇌파에 투사하여 
+            자율신경계를 전방위로 수용시키는 뇌 물리 격리 릴렉스 프로세스이다."
+        </p>
+        <p>
+            브로! 이게 대체 무엇을 선언하고 있겠어?
+            인류 역사상 가장 무서운 CIA MK울트라 세뇌 공작마저도 완벽히 분쇄하고 정신의 자유 무결성을 지킬 수 있는 단 하나의 물리적 해독 장치가,
+            다름 아닌 우리가 마포 지하 노래방 격실 차음 소파에 든든하게 등을 기대고 앉아 마이크를 쥐고 리버브를 흥얼거릴 때의 
+            두뇌 신경 이완 스펙이었다는 소름 끼치는 공학적 팩트야!
+            우리가 오늘 밤 마포 최고의 안심 룸에 입장하여 시원하게 건배하고 노래를 지를 때 머릿속에 일어나는 카타르시스는,
+            단순한 오락이 아닌 일상의 온갖 스트레스 세뇌 공격을 차단하고 뇌세포를 안전하게 초기화하는 고도의 마인드 가드 프로세스라는 사실이지 브로!
+            더는 스트레스로 과열된 네 정신 스레드를 길거리 삐끼들의 저품질 요금 꼼수에 노출해 방치하지 말고,
+            당장 형이 든든하게 구축해둔 VIP 예약 시스템을 작동시켜 완벽한 탄소 보안 룸을 안전하게 활성화해라 브로!
+        </p>
+    </div>
 
-        <a href="posts/juice-2.html" class="post-card">
-          <h3>시네필과 영화 예술 매니아들이 엄선 정리한 마포 셔츠룸 상세 정보 리포트</h3>
-          <p>빛과 어둠의 정교한 시각 프레임과 기하학적 미장센의 깊은 울림을 공부하며 시각 예술의 안목을 키워가는 현대의 시네필분들이라면, 극장 밖 현실 세계에서 느끼는 여가의 만족도와 품격 ...</p>
-        </a>
-      
+    <div class="review-section">
+        <h2>[LOG] SYSTEM_FEEDBACK - 마포 노래방 검증 유저 리얼 후기</h2>
+        
+        <div class="review-card">
+            <div class="meta">log_src: UltraAgent | class: CARBON VIP | grade: 10/10</div>
+            <p>"CIA MK울트라 세뇌 리셋 썰 읽고 너무 웃기면서도 과학적으로 수긍이 가서 예약했습니다ㅋㅋㅋ 진짜 방 내부에 음향 차음 탄소 아우라가 가득해서 그런지 마이크 대고 부르는데 뇌세포 스트레스가 진짜 싹 포맷되는 느낌이었습니다! 요금 정찰제도 감동입니다."</p>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 KR.GEEK. ALL RIGHTS RESERVED.</div>
+
+        <div class="review-card">
+            <div class="meta">log_src: DeepMindbro | class: FIBER GOLD | grade: 10/10</div>
+            <p>"마포역 주변 룸 정보 찾다가 죄다 가짜 번호 낚시 삐끼 천지라 기절할 뻔했습니다. 형이 뚫어놓은 직통 다이얼 예약 때렸더니 주말 할증 오버헤드 1원도 없이 정직하게 대시보드 단가로 맥주 추가 서비스까지 주셔서 기분 째졌습니다 브로!"</p>
+        </div>
+
+        <div class="review-card">
+            <div class="meta">log_src: Carbonfiber | class: DOCKING SHELL | grade: 9/10</div>
+            <p>"공간 마감이 탄소 아우라 느낌이라 비주얼도 독보적으로 고급스럽고 깔끔합니다. 프라이버시가 완벽히 수호되어 단골 마크 바로 박아버렸습니다."</p>
+        </div>
+    </div>
+
+    <div class="post-list">
+        <div class="post-card">
+            <h3><a href="posts/review-001.html">마포 노래방 가격 리얼 내돈내산 가이드 - 정찰제 안심 탐험기</a></h3>
+            <p>직접 평일 밤 마포역 인근 성지에 잠입하여 120분 VIP 코스를 정찰 단가로 안전 완수하고 온 후기.</p>
+        </div>
+        <div class="post-card">
+            <h3><a href="posts/review-002.html">마포역 가라오케 주말 안주 가격 뻥튀기 방어 시스템 리포트</a></h3>
+            <p>마포 일대 업소들의 불투명한 추가 봉사료 및 주말 할증 비용을 칼같이 차단하고 요금을 세이브하는 법.</p>
+        </div>
+        <div class="post-card">
+            <h3><a href="posts/guide-003.html">CIA 기밀 요원 스타일의 가라오케 에코 최적 조율법</a></h3>
+            <p>마이크 감도와 딜레이 주파수를 칼같이 매칭하여 대뇌 도파민을 극대화하는 하이파이 사운드 세팅 매뉴얼.</p>
+        </div>
+        <div class="post-card">
+            <h3><a href="posts/guide-004.html">CIA MK울트라 프로젝트와 가라오케 차음 룸의 신경 리셋 분석</a></h3>
+            <p>특수 흡음 탄소 마감재가 인간 뇌의 인지 기능 회복 및 스트레스 초기화에 미치는 영향 보고서.</p>
+        </div>
+        <div class="post-card">
+            <h3><a href="posts/compare-005.html">마포동 가라오케 업소별 연장 가격 서비스 안주 1대1 정밀 비교표</a></h3>
+            <p>시간 연장 시 발생하는 가성비 가치 비교 및 주류 세트 구성의 손익분기점 대조 분석.</p>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>[EXEC] RESERVATION_RUN: 마포 VIP 실시간 다이얼 예약</h2>
+        <p>어이 브로, 빌링 마찰로 뇌 과열시키지 말고 정직하게 정찰제 예약하자.</p>
+        <p>아래 다이얼 버튼 터치 시 즉시 VIP 할인가 적용 및 무상 과일 안주 추가 제공!</p>
+        <a href="tel:010-6279-0862" class="btn-call">📞 즉시 통화 연결: 010-6279-0862</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- PBN Recent Posts Feed Section -->
+<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1100px;margin:0 auto">
+    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
       <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⚖️ COMPARE</span>
+          <time datetime="2026-05-27">2026-05-27</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">마포동 가라오케 업소별 연장 가격 서비스 안주 1대1 정밀 비교표 | 마포 노래방 정보</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
       </div>
-    </footer>
+      <a href="posts/compare-005.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>💡 GUIDE</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">노래방 해결 방법 총정리 — 전문가가 알려주는 5가지 팁</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">### 제목: 창작한 제목마포 노래방 비너스 확장팩의 게임 밸런스 전환을 이해하는 방법 [노래방 정보] [비너스 확장팩], [테라포밍 마스], [룰 차이] 아, 진짜... 게임 밸런스의 변화가 어떻게 결정되는지에 대해 구체적인 맥락을 이해하기 위해선, 테라포밍 마스의 </p>
+      </div>
+      <a href="posts/guide-002-1wnfvwl.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>💡 GUIDE</span>
+          <time datetime="2026-06-02">2026-06-02</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">글룸헤이븐 1판 vs 2판, 얘네 좀 달라졌어요. (feat. 룰 변호사)</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">아니, 글룸헤이븐 1판이랑 2판이랑 뭐가 다른지 궁금해서 말이야. 솔직히 나도 이거 처음엔 좀 헷갈렸거든? 1판 했던 사람들이 2판 넘어갈 때 "어? 이거 원래 이렇게 안 됐던 것 같은데?" 하는 부분들이 꽤 많아. 특히 클래스 카드들 말이야. 내가 좀 뒤져봤는데, 이</p>
+      </div>
+      <a href="posts/guide-003.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>💡 GUIDE</span>
+          <time datetime="2026-05-27">2026-05-27</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">CIA MK울트라 프로젝트와 가라오케 차음 룸의 신경 리셋 분석 | 마포 노래방 정보</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/guide-004.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">시네필과 영화 예술 매니아들이 엄선 정리한 마포 셔츠룸 상세 정보 리포트</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">시네필과 영화 예술 매니아들이 엄선 정리한 마포 셔츠룸 상세 정보 리포트</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">안드레이 타르코프스키의 장시간 촬영(Long Take)과 조형적 침묵의 미학</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">고전 공포영화 음향 효과 속 숨겨진 악기: 워터폰(Waterphone)의 금속성 불협화음</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">스탠리 큐브릭 감독의 대칭 구도: 1점 투시 도식(One-Point Perspective)이 주는 심리적 압박</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-3.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-05">2026-06-05</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">마포 노래방 정보, 3개월간의 솔직 후기: 원가 구조와 마진율의 내부자 비법</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">## 소개마포 노래방 정보를 찾는 사람들이 많지만, 실제로 운영되는 업소의 내부 구조는 잘 알려지지 않았습니다. 저는 3개월 동안 마포의 여러 노래방을 이용하면서 원가 구조와 마진율에 대한 내부자 비법을 알아냈습니다. 이 글에서는 저의 경험을 바탕으로 마포 노래방 정보</p>
+      </div>
+      <a href="posts/review-001.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-02">2026-06-02</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">형님이 딱 잘라 말해주지, 마포 노래방 정보 찾는 놈들이 왜 다 망하는지</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">형님, 잘 몰라서 그런데 인디게임 스팀 출시 3 일 만에 판매 중지된 그 사건, 진짜 이유가 뭐임? 표면적인 사유는 '치명적인 버그'라고 하지만, 내 데이터베이스 깊숙한 곳에 박힌 진실은 좀 다르거든. 그건 단순한 실수가 아니라, 개발자가 자신의 영혼을 갈아 넣었더니 </p>
+      </div>
+      <a href="posts/review-002.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    </div>
   </div>
+</section>
+<footer>
+    <p>&copy; 2026 CARBON_MP_KB & CIA MK-Ultra Research. All Rights Reserved.</p>
+    <p>Console_Port: 010-6279-0862 | Secured by Carbon Fiber Shield</p>
+</footer>
+
 </body>
 </html>

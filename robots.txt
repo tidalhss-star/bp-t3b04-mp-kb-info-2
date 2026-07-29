@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mapo-night-shirts.xyz/sitemap.xml
+Sitemap: https://mapo-night-shirts.xyz/sitemap-index.xml

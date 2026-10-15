@@ -292,6 +292,11 @@ div[data-post-index-navigation="true"] a { display:inline-flex !important; visib
 nav.pager, nav.post-pager, nav[data-site-documents="true"] { display:flex !important; visibility:visible !important; flex-wrap:wrap; gap:12px; padding:16px 0; }
 nav.pager a, nav.post-pager a, nav[data-site-documents="true"] a { display:inline-flex !important; visibility:visible !important; align-items:center; padding:6px 10px; color:inherit; }
 :where(main, article, .content) :where(img), :where(body) > :where(img) { max-width:100%; height:auto; }
+/* legacy-mobile-spec-wrap */
+@media (max-width:640px) {
+  header h1 { overflow-wrap:anywhere; }
+  .spec-table th, .spec-table td { overflow-wrap:anywhere; }
+}
 </style>  <meta property="og:title" content="마포 노래방 정보 - 가짜 번호 우회 검증 안심 단가">
   <meta property="og:description" content="마포역 일대 노가방과 가라오케 룸 정보를 실전 자금 검증 기반으로 정리한 단일 보고서. 호객 삐끼와 가짜 번호를 우회하고, 가격 락과 안주 패키지가 포함된 클래스별 단가 매트릭스, 유저 후기를 함께 제공한다.">
   <meta property="og:type" content="website">
